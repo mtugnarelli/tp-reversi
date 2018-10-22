@@ -1,14 +1,20 @@
-UNTreF - Algoritmos y Programación 1
+UNTreF - Algoritmos y ProgramaciÃ³n 1
 
-# Trabajo Práctico: Reversi
+# Trabajo PrÃ¡ctico: Reversi
 
 ## Problema
 
-Completar el desarrollo de la aplicación Reversi.
+Completar el desarrollo de la aplicaciÃ³n Reversi.
+
+### Referencias
+
+ https://es.wikipedia.org/wiki/Reversi
+ 
+ https://es.wikihow.com/jugar-a-Othello
 
 ## Enunciado
 
-Implementar la clase `Reversi` a partir de la siguiente especificación: 
+Implementar la clase `Reversi` a partir de la siguiente especificaciÃ³n: 
 
 [`Reversi.java`](./src/juego/Reversi.java).
 
@@ -23,16 +29,16 @@ Implementar la clase `Reversi` a partir de la siguiente especificación:
 ## Condiciones
 
 El siguiente trabajo debe realizarse o en grupos de a lo sumo 3 personas, 
-no se admitirán bajo ningún concepto entregas individuales o de grupos formados por 4 o más personas.
+no se admitirÃ¡n bajo ningÃºn concepto entregas individuales o de grupos formados por 4 o mÃ¡s personas.
 
-Los docentes usarán su propia baterí­a de pruebas (que respetan la misma interfaz, 
-por lo que no deberán cambiar la firma de sus métodos públicos de la clase `Reversi`).
+Los docentes usarÃ¡n su propia baterÃ­Â­a de pruebas (que respetan la misma interfaz, 
+por lo que no deberÃ¡n cambiar la firma de sus mÃ©todos pÃºblicos de la clase `Reversi`).
 
-En función a las pruebas que pasen, se asignará una nota al trabajo. 
+En funciÃ³n a las pruebas que pasen, se asignarÃ¡ una nota al trabajo. 
 
-También serán tenidos en cuenta aquellos trabajos que mejoren la gráfica de la aplicación.
+TambiÃ©n serÃ¡n tenidos en cuenta aquellos trabajos que mejoren la grÃ¡fica de la aplicaciÃ³n.
 
-El 60% de las pruebas garantiza la aprobación.
+El 60% de las pruebas garantiza la aprobaciÃ³n.
 
 ## Pruebas Unitarias
 
