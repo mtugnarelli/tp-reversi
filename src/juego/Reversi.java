@@ -11,7 +11,11 @@ package juego;
  */
 public class Reversi {
 
-	/**
+    private Casillero[][] fichas;
+	private int dimension;
+    private String jugadorFichasNegras;
+
+    /**
 	 * pre : 'dimension' es un número par, mayor o igual a 4.
 	 * post: empieza el juego entre el jugador que tiene fichas negras, identificado como 
 	 * 		 'fichasNegras' y el jugador que tiene fichas blancas, identificado como
@@ -25,14 +29,67 @@ public class Reversi {
 	 */
 	public Reversi(int dimensionTablero, String fichasNegras, String fichasBlancas) {
 
+	    this.definirDimension(dimensionTablero);
+	    this.jugadorFichasNegras = fichasNegras;
+	    
+	    this.inicializar();
 	}
 
-	/**
+	private void inicializar() {
+
+	    fichas = new Casillero[this.dimension][this.dimension];
+
+	    inicializarCasillerosLibres();
+	    inicializarCasillerosConFichas();
+    }
+
+    private void inicializarCasillerosLibres() {
+        
+        for (int fila = 0; fila < this.dimension; fila++) {
+            
+            for (int columna = 0; columna < this.dimension; columna++) {
+                
+                fichas[fila][columna] = Casillero.LIBRE;
+            }
+        }
+    }
+
+    private void inicializarCasillerosConFichas() {
+        
+        int medio = this.dimension / 2;
+
+	    colocarEn(medio    , medio    , Casillero.BLANCAS);
+	    colocarEn(medio    , medio + 1, Casillero.NEGRAS);
+	    colocarEn(medio + 1, medio    , Casillero.NEGRAS);
+	    colocarEn(medio + 1, medio + 1, Casillero.BLANCAS);
+    }
+
+    private void colocarEn(int fila, int columna, Casillero ficha) {
+
+        fichas[fila-1][columna-1] = ficha;
+    }
+
+    private void definirDimension(int dimensionTablero) {
+
+	    if (dimensionTablero < 4) {
+	        
+	        throw new Error("El tablero no puede tener una dimensión menor a 4");
+	    }
+	    
+	    if (dimensionTablero % 2 != 0) {
+	        
+	        throw new Error("El tablero no puete tener dimensión impar");
+	    }
+
+	    this.dimension = dimensionTablero;
+    }
+
+    /**
 	 * post: devuelve la cantidad de filas que tiene el tablero.
 	 */
 	public int contarFilas() {
 		
-		return 4;
+		return this.dimension;
 	}
 
 	/**
@@ -40,7 +97,7 @@ public class Reversi {
 	 */
 	public int contarColumnas() {
 		
-		return 4;
+		return this.dimension;
 	}
 	
 	/**
@@ -49,7 +106,7 @@ public class Reversi {
 	 */
 	public String obtenerJugadorActual() {
 		
-		return "negras";
+		return this.jugadorFichasNegras;
 	}
 
 	/**
@@ -63,7 +120,7 @@ public class Reversi {
 	 */
 	public Casillero obtenerCasillero(int fila, int columna) {
 		
-		return Casillero.LIBRE;
+		return fichas[fila-1][columna-1];
 	}
 	
 	public boolean puedeColocarFicha(int fila, int columna) {
@@ -91,7 +148,7 @@ public class Reversi {
 	 */
 	public int contarFichasNegras() {
 	
-		return 0;
+		return 2;
 	}
 	
 	/**
@@ -99,7 +156,7 @@ public class Reversi {
 	 */
 	public int contarFichasBlancas() {
 		
-		return 0;
+		return 2;
 	}
 	
 	/**
