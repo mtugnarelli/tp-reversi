@@ -26,7 +26,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * RepresentaciÛn gr·fica del Tablero del Juego Reversi.
+ * Representaci√≥n gr√°fica del Tablero del Juego Reversi.
  * 
  */
 public class Tablero {
@@ -150,7 +150,7 @@ public class Tablero {
 	}
 
 	/**
-	 * post: dibuja la ficha en la posiciÛn indicada por fila y columna.
+	 * post: dibuja la ficha en la posici√≥n indicada por fila y columna.
 	 */
 	private void dibujarFicha(int fila, int columna) {
 
@@ -190,7 +190,7 @@ public class Tablero {
 		GridPane.setHalignment(elemento, HPos.CENTER);
 		GridPane.setValignment(elemento, VPos.CENTER);
 		
-		grilla.add(elemento, fila - 1, columna - 1);
+		grilla.add(elemento, columna - 1, fila - 1);
 	}
 
 	
@@ -232,7 +232,7 @@ public class Tablero {
 	}
 	
 	/**
-	 * pre : el juego asociado terminÛ.
+	 * pre : el juego asociado termin√≥.
 	 * post: muestra un mensaje indicando el resultado del juego.
 	 */
 	public void mostrarResultado() {
@@ -262,7 +262,7 @@ public class Tablero {
 		String mensajeResultado;
 		if (juego.hayGanador()) {
 			
-			mensajeResultado = "GanÛ el jugador " + juego.obtenerGanador();
+			mensajeResultado = "Gan√≥ el jugador " + juego.obtenerGanador();
 			
 		} else {
 			
