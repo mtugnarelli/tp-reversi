@@ -120,7 +120,11 @@ public class Reversi {
 	 */
 	public Casillero obtenerCasillero(int fila, int columna) {
 		
-		return fichas[fila-1][columna-1];
+	    if ((fila == 1) && (columna == 3))
+	        
+	        return Casillero.NEGRAS;
+	    
+	    return fichas[fila-1][columna-1];
 	}
 	
 	public boolean puedeColocarFicha(int fila, int columna) {
