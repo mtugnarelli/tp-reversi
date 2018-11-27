@@ -163,4 +163,15 @@ public class ReversiTest {
         assertCasilleroLibreEnRango(3, 5, 4, 6);
         assertCasilleroLibreEnRango(5, 1, 6, 6);
     }
+    
+    @Test
+    public void primeroJuegaMarcosConLasFichasNegras() {
+        
+        reversi = new Reversi(4, "Marcos", "Luciana");
+        
+        reversi.colocarFicha(1, 2);
+        
+        assertFichaNegraEn(1, 2);
+    }
+    
 }

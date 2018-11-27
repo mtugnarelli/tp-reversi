@@ -145,6 +145,7 @@ public class Reversi {
 	 */
 	public void colocarFicha(int fila, int columna) {
 
+	    this.colocarEn(fila, columna, Casillero.NEGRAS);
 	}
 	
 	/**
